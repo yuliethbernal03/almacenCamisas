@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/css/bootstrap.min.css">
+    <title>
+        {% block titulo %}
+        {% endblock titulo %}
+    </title>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">
+              <img src="/static/img/logoModern.png" alt="">
+          </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+              <div class="navbar-nav">
+                  <a class="nav-link active" aria-current="" href="{% url 'home_view' %}">Home</a>
+                  <a class="nav-link" href="{% url 'about_view' %}">about</a>
+                  <a class="nav-link" href="{% url 'contact_view' %}">Contact</a>
+             </div>
+          </div>
+      </div>
+    </nav>
+    <div class="container">
+        {% block contenido %}
+        {% endblock %}
+    </div>
+    
+</body>
+</html>
