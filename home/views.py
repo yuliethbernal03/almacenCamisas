@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from .forms import *
+from .models import *
 
 # Create your views here.
 def home_view(request):
@@ -25,3 +26,9 @@ def contact_view(request):
         formulario = contacto_form()
 
     return render (request, 'contact.html', locals())
+    
+def products_view (request):
+    products = DatosProducto.objects.filter()
+    
+    return render (request, 'products.html', locals())
+
