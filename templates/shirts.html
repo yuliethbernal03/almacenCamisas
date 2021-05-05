@@ -1,32 +1,30 @@
 {% extends 'base.html' %}
 
 {% block titulo %}
-Products
+Shirt data list
 {% endblock titulo %}
 
 {% block contenido %} 
-   <h1>product data list</h1> 
-   <a href="{% url 'add_product_view' %}" class="btn btn-primary">Add product</a>
+   <h1>shirt data list</h1> 
+   <a href="{% url 'add_tShirt_view' %}" class="btn btn-primary">Add shirt type</a>
     <table class="table">
       <thead>
         <tr>
           <th scope="col">Id</th>
-          <th scope="col">Name</th>
-          <th scope="col">Size</th>
-          <th scope="col">Description</th>
+          <th scope="col">Name </th>
+          <th scope="col">Entry date</th>
           <th scope="col">Type of fabric</th>
-          <th scope="col">Shirt type</th>
+          <th scope="col">Quantities</th>
         </tr>
       </thead>
       <tbody>
-         {% for p in listProducts %}
+         {% for p in listShirts %}
          <tr>
             <td>{{ p.id }}</td>
             <td>{{ p.Nombre }}</td>
-            <td>{{ p.Talla }}</td>
-            <td>{{ p.Descripcion }}</td>
+            <td>{{ p.Fecha_Entrada }}</td>
             <td>{{ p.categoria }}</td>
-            <td>{{ p.pedido }}</td>
+            <td>{{ p.Cantidad }}</td>
         </tr>
         {% endfor %}
       </tbody>

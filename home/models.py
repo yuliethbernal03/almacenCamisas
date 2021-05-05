@@ -10,7 +10,7 @@ class Categoria(models.Model):
 
 class Pedido(models.Model):
     Nombre = models.CharField(max_length = 100)
-    Fecha_Entrada = models.DateField(auto_now=True)
+    Fecha_Entrada = models.DateField()
     categoria = models.ForeignKey(Categoria, models.PROTECT)
     Cantidad = models.IntegerField()
 
@@ -24,5 +24,5 @@ class DatosProducto(models.Model):
     categoria = models.ForeignKey(Categoria, models.PROTECT)
     pedido = models.OneToOneField(Pedido, models.PROTECT)
     
-    def __str__ (self):
+    def __str__ (self): 
         return self.Nombre

@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block titulo %}
+   Add shirt type
+{% endblock titulo %}
+
+{% block contenido %} 
+<h1>Add shirt type</h1>
+   <form action="" method="POST" enctype="multipart/form-data">
+       {% csrf_token %}
+       {{ formulario.as_p }}
+       <input type="submit" value="Guardar tipo de camisa">
+
+   </form>
+{% endblock contenido %}

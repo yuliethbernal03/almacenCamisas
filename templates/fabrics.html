@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block titulo %}
+Fabric data list
+{% endblock titulo %}
+
+{% block contenido %} 
+   <h1>Fabric data list</h1> 
+   <a href="{% url 'add_tFabric_view' %}" class="btn btn-primary">Agregar tipo de tela</a>
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">Id</th>
+          <th scope="col">Nombre</th>
+          <th scope="col">Descripcion</th>
+        </tr>
+      </thead>
+      <tbody>
+         {% for p in listFabrics %}
+         <tr>
+            <td>{{ p.id }}</td>
+            <td>{{ p.Nombre }}</td>
+            <td>{{ p.Descripcion }}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+{% endblock contenido %}
