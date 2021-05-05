@@ -15,6 +15,7 @@ Shirt data list
           <th scope="col">Entry date</th>
           <th scope="col">Type of fabric</th>
           <th scope="col">Quantities</th>
+          <th scope="col">Actions</th>
         </tr>
       </thead>
       <tbody>
@@ -25,6 +26,10 @@ Shirt data list
             <td>{{ p.Fecha_Entrada }}</td>
             <td>{{ p.categoria }}</td>
             <td>{{ p.Cantidad }}</td>
+            <td>
+              <a href="{% url 'edit_tShirt_view' id_shirt=p.id %}" class="btn btn-warning">Edit</a>
+              <a href="{% url 'remove_tShirt_view' id_shirt=p.id %}" class="btn btn-danger">Delete</a>
+            </td>
         </tr>
         {% endfor %}
       </tbody>

@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block titulo %}
+   See product
+{% endblock titulo %}
+
+{% block contenido %} 
+    <h1>Product description </h1>
+    <p></p>
+    <p>{{ detalle.id }}</p>
+    <p>{{ detalle.Nombre }}</p>
+    <p>{{ detalle.Talla }}</p>
+    <p>{{ detalle.Descripcion }}</p>
+    <p>{{ detalle.categoria }}</p>
+    <p>{{ detalle.pedido }}</p>
+
+    <a href="{% url 'products_view' %}">Regresar a la lista de productos</a>
+{% endblock contenido %}

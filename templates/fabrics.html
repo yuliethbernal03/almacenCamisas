@@ -13,6 +13,7 @@ Fabric data list
           <th scope="col">Id</th>
           <th scope="col">Nombre</th>
           <th scope="col">Descripcion</th>
+          <th scope="col">Actions</th>
         </tr>
       </thead>
       <tbody>
@@ -21,6 +22,10 @@ Fabric data list
             <td>{{ p.id }}</td>
             <td>{{ p.Nombre }}</td>
             <td>{{ p.Descripcion }}</td>
+            <td>
+              <a href="{% url 'edit_tFabric_view' id_fabric=p.id %}" class="btn btn-warning">Edit</a>
+              <a href="{% url 'remove_tFabric_view' id_fabric=p.id %}" class="btn btn-danger">Delete</a>
+            </td>
         </tr>
         {% endfor %}
       </tbody>

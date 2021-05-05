@@ -72,4 +72,55 @@ def add_tFabric_view (request):
 
     return render (request, 'add_tFabric.html', locals())
 
+def see_product_view (request, id_prod):
+    detalle = DatosProducto.objects.get(id=id_prod)
+    return render(request, 'see_product.html', locals())
+
+def remove_product_view (request, id_prod):
+    objeto = DatosProducto.objects.get(id=id_prod)
+    objeto.delete()
+    return redirect ('/products/')
+
+def edit_product_view (request, id_prod):
+    objeto = DatosProducto.objects.get(id = id_prod)
+    if request.method == 'POST':
+        formulario  = agregar_producto_form(request.POST, request.FILES, instance = objeto)
+        if formulario.is_valid():
+            formulario.save()
+            return redirect('/products/')
+    else:
+        formulario = agregar_producto_form(instance = objeto)
+    return render (request, 'add_product.html', locals())
+
+def remove_tShirt_view (request, id_shirt):
+    objeto = Pedido.objects.get(id=id_shirt)
+    objeto.delete()
+    return redirect ('/shirts/')
+
+def edit_tShirt_view (request, id_shirt):
+    objeto = Pedido.objects.get(id = id_shirt)
+    if request.method == 'POST':
+        formulario  = agregar_tCamisa_form(request.POST, request.FILES, instance = objeto)
+        if formulario.is_valid():
+            formulario.save()
+            return redirect('/shirts/')
+    else:
+        formulario = agregar_tCamisa_form(instance = objeto)
+    return render (request, 'add_tShirt.html', locals())
+
+def remove_tFabric_view (request, id_fabric):
+    objeto = Categoria.objects.get(id=id_fabric)
+    objeto.delete()
+    return redirect ('/fabrics/')
+
+def edit_tFabric_view (request, id_fabric):
+    objeto = Categoria.objects.get(id = id_fabric)
+    if request.method == 'POST':
+        formulario  = agregar_tTela_form(request.POST, request.FILES, instance = objeto)
+        if formulario.is_valid():
+            formulario.save()
+            return redirect('/fabrics/')
+    else:
+        formulario = agregar_tTela_form(instance = objeto)
+    return render (request, 'add_tFabric.html', locals())
  

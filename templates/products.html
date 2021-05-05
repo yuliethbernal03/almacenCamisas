@@ -13,9 +13,9 @@ Products
           <th scope="col">Id</th>
           <th scope="col">Name</th>
           <th scope="col">Size</th>
-          <th scope="col">Description</th>
           <th scope="col">Type of fabric</th>
           <th scope="col">Shirt type</th>
+          <th scope="col">Actions</th>
         </tr>
       </thead>
       <tbody>
@@ -24,9 +24,13 @@ Products
             <td>{{ p.id }}</td>
             <td>{{ p.Nombre }}</td>
             <td>{{ p.Talla }}</td>
-            <td>{{ p.Descripcion }}</td>
             <td>{{ p.categoria }}</td>
             <td>{{ p.pedido }}</td>
+            <td>
+              <a href="{% url 'see_product_view' id_prod=p.id %}" class="btn btn-info">See</a>
+              <a href="{% url 'edit_product_view' id_prod=p.id %}" class="btn btn-warning">Edit</a>
+              <a href="{% url 'remove_product_view' id_prod=p.id %}" class="btn btn-danger">Delete</a>
+            </td>
         </tr>
         {% endfor %}
       </tbody>
