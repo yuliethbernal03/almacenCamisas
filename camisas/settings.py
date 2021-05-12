@@ -25,7 +25,7 @@ SECRET_KEY = 'n3vnp_(wi&*7+#gqnu#*!8l6nl=e!(bvzhws(hm$ukoq6_(^$z'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['almacen-camisas.herokuapp.com']
 
 
 # Application definition
@@ -38,6 +38,10 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'home',
+    'webservices',
+    'rest_framework',
+    'gunicorn',
+    'psycopg2',
 ]
 
 MIDDLEWARE = [
@@ -74,19 +78,28 @@ WSGI_APPLICATION = 'camisas.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
+#DATABASES = {
+#   'default': {
+#       'ENGINE': 'django.db.backends.mysql',
+#       'NAME': 'BdCamisas',
+#       'USER': 'root',
+#       'PASSWORD': '',
+#       'HOST': '127.0.0.1',
+#       'PORT': '3306',
+#     }
+#}
+
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'BdCamisas',
-        'USER': 'root',
-        'PASSWORD': '',
-        'HOST': '127.0.0.1',
-        'PORT': '3306',
+        'ENGINE': 'django.db.backends.psycopg2',
+        'NAME': 'd3kvcjs3bngrik',
+        'USER': 'rgajdzyytnglhq',
+        'PASSWORD': 'd247152ab60942513fac5fc4b35112814e36e564bb9dda42da0b7d6c827c8a98',
+        'HOST': 'ec2-35-174-35-242.compute-1.amazonaws.com',
+        'PORT': '5432',
     }
 }
 
-
-# Password validation
 # https://docs.djangoproject.com/en/3.1/ref/settings/#auth-password-validators
 
 AUTH_PASSWORD_VALIDATORS = [
@@ -123,7 +136,11 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
 STATIC_URL = '/static/'
-STATICFILES_DIRS = [
-    BASE_DIR / "static",
-]
-#STATIC_ROOT = "static"
+#STATICFILES_DIRS = [
+#    BASE_DIR / "static",
+#]
+STATIC_ROOT = "static"
+
+#servidor de medios
+MEDIA_URL = '/media/'
+MEDIA_ROOT = "media"
