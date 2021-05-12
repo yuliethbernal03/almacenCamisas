@@ -91,7 +91,7 @@ WSGI_APPLICATION = 'camisas.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.psycopg2',
+        'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'd3kvcjs3bngrik',
         'USER': 'rgajdzyytnglhq',
         'PASSWORD': 'd247152ab60942513fac5fc4b35112814e36e564bb9dda42da0b7d6c827c8a98',
