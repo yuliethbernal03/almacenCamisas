@@ -8,15 +8,19 @@ class contacto_form(forms.Form):
 
 class agregar_tEstampado_form(forms.ModelForm):
     class Meta:
-        model = DatosProducto
+        model = Estampados
         fields = '__all__'
 
 class agregar_tCamisa_form(forms.ModelForm):
     class Meta:
-        model = Pedido
+        model = Camisa
         fields = '__all__'
 
 class agregar_tTela_form(forms.ModelForm):
     class Meta:
-        model = Categoria
+        model = Tela
         fields = '__all__'
+
+class login_form(forms.Form):
+    usuario = forms.CharField(widget=forms.TextInput())
+    clave = forms.CharField(widget=forms.PasswordInput(render_value=False))

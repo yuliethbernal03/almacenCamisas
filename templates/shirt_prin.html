@@ -6,7 +6,10 @@ Shirts print
 
 {% block contenido %} 
    <h1>shirt print data list</h1> 
-   <a href="{% url 'add_shirt_print_view' %}" class="btn btn-primary">Add shirt print</a>
+   {% if request.user.is_authenticated and request.user.is_superuser %}
+     <a href="{% url 'add_shirt_print_view' %}" class="btn btn-primary">Add shirt print</a>
+   {% endif %}
+   
     <table class="table">
       <thead>
         <tr>
@@ -28,8 +31,10 @@ Shirts print
             <td>{{ p.pedido }}</td>
             <td>
               <a href="{% url 'see_shirt_print_view' id_print=p.id %}" class="btn btn-info">See</a>
-              <a href="{% url 'edit_shirt_print_view' id_print=p.id %}" class="btn btn-warning">Edit</a>
-              <a href="{% url 'remove_shirt_print_view' id_print=p.id %}" class="btn btn-danger">Delete</a>
+              {% if request.user.is_authenticated and request.user.is_superuser %}
+                  <a href="{% url 'edit_shirt_print_view' id_print=p.id %}" class="btn btn-warning">Edit</a>
+                  <a href="{% url 'remove_shirt_print_view' id_print=p.id %}" class="btn btn-danger">Delete</a>
+              {% endif %}
             </td>
         </tr>
         {% endfor %}

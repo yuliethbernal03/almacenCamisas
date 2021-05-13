@@ -18,4 +18,6 @@ urlpatterns = [
     path('edit_tShirt/<int:id_shirt>', edit_tShirt_view, name = 'edit_tShirt_view'),
     path('remove_tFabric/<int:id_fabric>', remove_tFabric_view, name = 'remove_tFabric_view'),
     path('edit_tFabric/<int:id_fabric>', edit_tFabric_view, name = 'edit_tFabric_view'),
+    path('login/', login_view, name = 'login_view'),
+    path('logout/', logout_view, name = 'logout_view'),
 ]

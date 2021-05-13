@@ -7,16 +7,16 @@ Contact
 {% block contenido %} 
     
     {% if enviado %}
-    <h2>Informacion suministrada</h2>
+     <h2>Informacion suministrada</h2>
         {{ email }} <br>
         {{ title }} <br>
         {{ text }}
     {% else %}
-    <h2>contactanos</h2>
+     <h2>contactanos</h2>
         <form action="" method="POST">
             {% csrf_token %}
             {{ formulario.as_p }}
             <input type="submit" value="Enviar">
        </form>
     {% endif %}
-    {% endblock %}
+{% endblock %}
