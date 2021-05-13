@@ -1,1 +1,1 @@
-web: gunicorn ccamisas.wsgi -b 0.0.0.0:$PORT
+web: gunicorn camisas.wsgi -b 0.0.0.0:$PORT
