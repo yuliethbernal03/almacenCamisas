@@ -139,7 +139,7 @@ STATIC_URL = '/static/'
 #STATICFILES_DIRS = [
 #    BASE_DIR / "static",
 #]
-STATIC_ROOT = "static"
+STATIC_ROOT = 'static'
 
 #servidor de medios
 MEDIA_URL = '/media/'
