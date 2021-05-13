@@ -6,7 +6,7 @@ class contacto_form(forms.Form):
     titulo = forms.CharField(widget = forms.TextInput())
     texto = forms.CharField(widget = forms.Textarea())
 
-class agregar_producto_form(forms.ModelForm):
+class agregar_tEstampado_form(forms.ModelForm):
     class Meta:
         model = DatosProducto
         fields = '__all__'

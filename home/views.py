@@ -27,9 +27,9 @@ def contact_view(request):
 
     return render (request, 'contact.html', locals())
     
-def products_view(request):
-    listProducts = DatosProducto.objects.filter()
-    return render (request, 'products.html', locals())
+def shirt_print_view(request):
+    listShirtPrint = DatosProducto.objects.filter()
+    return render (request, 'shirt_prin.html', locals())
 
 def shirts_view(request):
     listShirts = Pedido.objects.filter()
@@ -39,16 +39,16 @@ def fabrics_view(request):
     listFabrics = Categoria.objects.filter()
     return render (request, 'fabrics.html', locals())
 
-def add_product_view(request):
+def add_shirt_print_view(request):
     if request.method == 'POST':
-        formulario = agregar_producto_form(request.POST, request.FILES)
+        formulario = agregar_tEstampado_form(request.POST, request.FILES)
         if formulario.is_valid():
             formulario.save()
-            return redirect('/products/')
+            return redirect('/shirt_print/')
     else:
-        formulario = agregar_producto_form()
+        formulario =  agregar_tEstampado_form()
 
-    return render (request, 'add_product.html', locals())
+    return render (request, 'add_shirt_print.html', locals())
 
 def add_tShirt_view (request):
     if request.method == 'POST':
@@ -72,25 +72,25 @@ def add_tFabric_view (request):
 
     return render (request, 'add_tFabric.html', locals())
 
-def see_product_view (request, id_prod):
-    detalle = DatosProducto.objects.get(id=id_prod)
-    return render(request, 'see_product.html', locals())
+def see_shirt_print_view(request, id_print):
+    detalle = DatosProducto.objects.get(id=id_print)
+    return render(request, 'see_shirt_print.html', locals())
 
-def remove_product_view (request, id_prod):
-    objeto = DatosProducto.objects.get(id=id_prod)
+def remove_shirt_print_view (request, id_print):
+    objeto = DatosProducto.objects.get(id=id_print)
     objeto.delete()
-    return redirect ('/products/')
+    return redirect ('/shirt_print/')
 
-def edit_product_view (request, id_prod):
-    objeto = DatosProducto.objects.get(id = id_prod)
+def edit_shirt_print_view (request, id_print):
+    objeto = DatosProducto.objects.get(id=id_print)
     if request.method == 'POST':
-        formulario  = agregar_producto_form(request.POST, request.FILES, instance = objeto)
+        formulario  = agregar_tEstampado_form(request.POST, request.FILES, instance = objeto)
         if formulario.is_valid():
             formulario.save()
-            return redirect('/products/')
+            return redirect('/shirt_print/')
     else:
-        formulario = agregar_producto_form(instance = objeto)
-    return render (request, 'add_product.html', locals())
+        formulario = agregar_tEstampado_form(instance = objeto)
+    return render (request, 'add_shirt_print.html', locals())
 
 def remove_tShirt_view (request, id_shirt):
     objeto = Pedido.objects.get(id=id_shirt)

@@ -1,12 +1,12 @@
 {% extends 'base.html' %}
 
 {% block titulo %}
-   See product
+   See shirt print
 {% endblock titulo %}
 
 {% block contenido %} 
-    <h1>Product description </h1>
-    <p></p>
+    <h1>shirt print description </h1>
+    
     <p>{{ detalle.id }}</p>
     <p>{{ detalle.Nombre }}</p>
     <p>{{ detalle.Talla }}</p>
@@ -14,5 +14,5 @@
     <p>{{ detalle.categoria }}</p>
     <p>{{ detalle.pedido }}</p>
 
-    <a href="{% url 'products_view' %}">Regresar a la lista de productos</a>
+    <a href="{% url 'shirt_print_view' %}">Regresar a la lista de Estampados</a>
 {% endblock contenido %}
