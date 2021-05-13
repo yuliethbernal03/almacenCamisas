@@ -1,11 +1,11 @@
 {% extends 'base.html' %}
 
 {% block titulo %}
-   Add product
+   Add shirt print
 {% endblock titulo %}
 
 {% block contenido %} 
-<h1>Add product</h1>
+<h1>Add shirt print</h1>
    <form action="" method="POST" enctype="multipart/form-data">
        {% csrf_token %}
        {{ formulario.as_p }}
