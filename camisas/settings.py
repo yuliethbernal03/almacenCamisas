@@ -26,7 +26,7 @@ SECRET_KEY = 'n3vnp_(wi&*7+#gqnu#*!8l6nl=e!(bvzhws(hm$ukoq6_(^$z'
 DEBUG = True
 
 #ALLOWED_HOSTS = ['*']
-ALOWED_HOSTS = ['almacen-camisas.herokuapp.com']
+ALLOWED_HOSTS = ['almacen-camisas.herokuapp.com']
 
 
 # Application definition
