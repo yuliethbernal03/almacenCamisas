@@ -1,18 +1,18 @@
 {% extends 'base.html' %}
 
 {% block titulo %}
-Login
+Register user
 {% endblock titulo %}
 
 {% block contenido %}
-  <body class="text-center">
+<body class="text-center">
     
     <main class="form-signin">
-        <form action="" method="POST">
+        <form action="" method="POST"></form>
         <img class="mb-4" src="/static/img/logoModern.png" alt="" width="100" height="57">
-        <h1 class="h3 mb-3 fw-normal"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Por favor, Inicie sesión</font></font></h1>
+        <h1 class="h3 mb-3 fw-normal"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Por favor, registrese</font></font></h1>
     
-        <h5>{{ msj }}</h5> 
+        <h2> {{ msj }} </h2>
         <div class="form-floating">
             {% csrf_token %}
         </div>
@@ -25,8 +25,7 @@ Login
             <input type="checkbox" value="remember-me"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"> Recuérdame
           </font></font></label>
         </div>
-        <button class="w-100 btn btn-lg btn-primary" type="submit"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Iniciar sesión</font></font></button>
-      </form>
-    
+        <button class="w-100 btn btn-lg btn-primary" type="submit"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Registrarse</font></font></button>
+      </form>    
     <div class="goog-te-spinner-pos"><div class="goog-te-spinner-animation"><svg xmlns="http://www.w3.org/2000/svg" class="goog-te-spinner" width="96px" height="96px" viewBox="0 0 66 66"><circle class="goog-te-spinner-path" fill="none" stroke-width="6" stroke-linecap="round" cx="33" cy="33" r="30"></circle></svg></div></div></body>
 {% endblock %}

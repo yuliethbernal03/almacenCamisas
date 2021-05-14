@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect
 from .forms import *
 from .models import *
 from django.contrib.auth import login, logout, authenticate
+from django.contrib.auth.models import User
 
 # Create your views here.
 def home_view(request):
@@ -146,3 +147,25 @@ def login_view(request):
 def logout_view(request):
     logout(request)
     return redirect('/login/')
+
+def register_view(request):
+    formulario = registro_form()
+    usuario = ""
+    correo = ""
+    clave_1 = ""
+    clave_2 = ""
+    if request.method == 'POST':
+        formulario = registro_form(request.POST)
+        if formulario.is_valid():
+            usuario = formulario.cleaned_data['username']
+            correo = formulario.cleaned_data['email']
+            clave_1 = formulario.cleaned_data['password_1']
+            clave_2 = formulario.cleaned_data['password_2']
+            u = User.objects.create_user(username=usuario, email=correo, password=clave_1)
+            u.save()
+            return redirect ('/login/')
+        else:
+            msj = 'No se pudo enviar el formulario.'
+    else:
+        return render (request, 'register.html', locals())
+    return render(request, 'register.html', locals())

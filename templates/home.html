@@ -5,5 +5,69 @@
 {% endblock titulo %}
 
 {% block contenido %} 
-   {{ msg }}
+<main>
+   <div class="position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center bg-light">
+     <div class="col-md-5 p-lg-5 mx-auto my-5">
+       <h1 class="display-4 fw-normal">Estampado textil</h1>
+       <img class="mb-4" src="/static/img/2.jpg" alt="" width="100%" height="150%">
+       <p class="lead fw-normal">Haz parte de nuestro proceso de estampado textil</p>
+       <a class="btn btn-outline-secondary" href="{% url 'shirt_print_view' %}">Nuestros productos</a>
+     </div>
+     <div class="product-device shadow-sm d-none d-md-block"></div>
+     <div class="product-device product-device-2 shadow-sm d-none d-md-block"></div>
+   </div>
+ 
+   <div class="d-md-flex flex-md-equal w-100 my-md-3 ps-md-3">
+     <div class="bg-dark me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center text-white overflow-hidden">
+       <div class="my-3 py-3">
+         <h2 class="display-5">Diferentes tecnicas de estampado</h2>
+       </div>
+       <div class="bg-light shadow-sm mx-auto" style="width: 80%; height: 300px; border-radius: 21px 21px 0 0;">
+         <img class="mb-4" src="/static/img/4.jpg" alt="" width="80%" height="100%"></div>
+         <p class="lead">Escoge la que mas te guste.</p>
+     </div>
+     <div class="bg-light me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
+       <div class="my-3 p-3">
+         <h2 class="display-5">Tus propios diseños</h2>
+       </div>
+       <div class="bg-dark shadow-sm mx-auto" style="width: 80%; height: 300px; border-radius: 21px 21px 0 0;">
+         <img class="mb-4" src="/static/img/3.jpg" alt="" width="100%" height="100%"></div>
+         <p class="lead">Estampa lo que mas te gusta.</p>
+
+     </div>
+   </div>
+ 
+   <div class="d-md-flex flex-md-equal w-100 my-md-3 ps-md-3">
+     <div class="bg-light me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
+       <div class="my-3 p-3">
+         <h2 class="display-5">Variedad de Tegidos</h2>
+       </div>
+       <div class="bg-dark shadow-sm mx-auto" style="width: 80%; height: 300px; border-radius: 21px 21px 0 0;">
+         <img class="mb-4" src="/static/img/5.jpg" alt="" width="100%" height="100%"></div>
+         <p class="lead">Escoge tu preferido.</p>
+     </div>
+     <div class="bg-primary me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center text-white overflow-hidden">
+       <div class="my-3 py-3">
+         <h2 class="display-5">Contactate con nosotros</h2>
+         
+       </div>
+       <div class="bg-light shadow-sm mx-auto" style="width: 80%; height: 300px; border-radius: 21px 21px 0 0;">
+         <img class="mb-4" src="/static/img/6.jpg" alt="" width="100%" height="100%"></div>
+         <p class="lead">Envianos tus diseños. </p>
+     </div>
+   </div>
+
+   <div class="position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center bg-light">
+      <div class="col-md-5 p-lg-5 mx-auto my-5">
+        <h1 class="display-4 fw-normal">Forma parte de nuestro equipo</h1>
+        <img class="mb-4" src="/static/img/1.jpg" alt="" width="100%" height="150%">
+        <p class="lead fw-normal">Haz parte de nuestro proceso de estampado textil</p>
+        <a class="btn btn-outline-secondary" href="{% url 'register_view' %}">Registrate</a>
+      </div>
+      <div class="product-device shadow-sm d-none d-md-block"></div>
+      <div class="product-device product-device-2 shadow-sm d-none d-md-block"></div>
+    </div>
+ 
+   
+ </main>
 {% endblock contenido %}

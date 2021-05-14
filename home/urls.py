@@ -20,4 +20,5 @@ urlpatterns = [
     path('edit_tFabric/<int:id_fabric>', edit_tFabric_view, name = 'edit_tFabric_view'),
     path('login/', login_view, name = 'login_view'),
     path('logout/', logout_view, name = 'logout_view'),
+    path('register/', register_view, name = 'register_view'),
 ]
