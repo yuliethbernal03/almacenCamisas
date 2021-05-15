@@ -26,7 +26,7 @@ SECRET_KEY = 'n3vnp_(wi&*7+#gqnu#*!8l6nl=e!(bvzhws(hm$ukoq6_(^$z'
 DEBUG = True
 
 # ALLOWED_HOSTS = ['*']
-ALLOWED_HOSTS = ['almacen-camisas.herokuapp.com']
+ALLOWED_HOSTS = ['camisas-almacen.herokuapp.com']
 
 
 # Application definition
@@ -93,10 +93,10 @@ WSGI_APPLICATION = 'camisas.wsgi.application'
 DATABASES = {
    'default': {
        'ENGINE': 'django.db.backends.postgresql',
-       'NAME': 'd3kvcjs3bngrik',
-       'USER': 'rgajdzyytnglhq',
-       'PASSWORD': 'd247152ab60942513fac5fc4b35112814e36e564bb9dda42da0b7d6c827c8a98',
-       'HOST': 'ec2-35-174-35-242.compute-1.amazonaws.com',
+       'NAME': 'd18o9gfrigkdun',
+       'USER': 'rpgnljxzbisleq',
+       'PASSWORD': '563c3740aad217f486a2e07a563a2f6a26229a1ff3b8995643056d5c2bdbd8b9',
+       'HOST': 'ec2-18-214-140-149.compute-1.amazonaws.com',
       'PORT': '5432',
    }
 }
