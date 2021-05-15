@@ -25,8 +25,8 @@ SECRET_KEY = 'n3vnp_(wi&*7+#gqnu#*!8l6nl=e!(bvzhws(hm$ukoq6_(^$z'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-# ALLOWED_HOSTS = ['*']
-ALLOWED_HOSTS = ['camisas-almacen.herokuapp.com']
+ALLOWED_HOSTS = ['*']
+# ALLOWED_HOSTS = ['camisas-almacen.herokuapp.com']
 
 
 # Application definition
@@ -79,27 +79,27 @@ WSGI_APPLICATION = 'camisas.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
-# DATABASES = {
-#    'default': {
-#       'ENGINE': 'django.db.backends.mysql',
-#        'NAME': 'BdCamisas',
-#        'USER': 'root',
-#        'PASSWORD': '',
-#        'HOST': '127.0.0.1',
-#        'PORT': '3306',
-#      }
-# }
-
 DATABASES = {
    'default': {
-       'ENGINE': 'django.db.backends.postgresql',
-       'NAME': 'd18o9gfrigkdun',
-       'USER': 'rpgnljxzbisleq',
-       'PASSWORD': '563c3740aad217f486a2e07a563a2f6a26229a1ff3b8995643056d5c2bdbd8b9',
-       'HOST': 'ec2-18-214-140-149.compute-1.amazonaws.com',
-      'PORT': '5432',
-   }
+      'ENGINE': 'django.db.backends.mysql',
+       'NAME': 'BdCamisas',
+       'USER': 'root',
+       'PASSWORD': '',
+       'HOST': '127.0.0.1',
+       'PORT': '3306',
+     }
 }
+
+# DATABASES = {
+#    'default': {
+#        'ENGINE': 'django.db.backends.postgresql',
+#        'NAME': 'd18o9gfrigkdun',
+#        'USER': 'rpgnljxzbisleq',
+#        'PASSWORD': '563c3740aad217f486a2e07a563a2f6a26229a1ff3b8995643056d5c2bdbd8b9',
+#        'HOST': 'ec2-18-214-140-149.compute-1.amazonaws.com',
+#       'PORT': '5432',
+#    }
+# }
 
 # https://docs.djangoproject.com/en/3.1/ref/settings/#auth-password-validators
 
@@ -137,10 +137,10 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
 STATIC_URL = '/static/'
-# STATICFILES_DIRS = [
-#     BASE_DIR / "static",
-# ]     #para trabajar localhost
-STATIC_ROOT = "static" #static para trabajar heroku
+STATICFILES_DIRS = [
+    BASE_DIR / "static",
+]     #para trabajar localhost
+# STATIC_ROOT = "static" #static para trabajar heroku
 
 #servidor de medios
 MEDIA_URL = '/media/'
