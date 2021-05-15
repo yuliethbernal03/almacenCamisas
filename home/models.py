@@ -11,7 +11,7 @@ class Tela(models.Model):
 class Camisa(models.Model):
     Nombre = models.CharField(max_length = 100)
     Fecha_Entrada = models.DateField()
-    categoria = models.ForeignKey(Tela, models.PROTECT)
+    Tela = models.ForeignKey(Tela, models.PROTECT)
     Cantidad = models.IntegerField()
 
     def __str__ (self):
@@ -21,8 +21,8 @@ class Estampados(models.Model):
     Nombre = models.CharField(max_length = 100)
     Talla = models.CharField(max_length = 6)
     Descripcion = models.CharField(max_length = 200)
-    categoria = models.ForeignKey(Tela, models.PROTECT)
-    pedido = models.OneToOneField(Camisa, models.PROTECT)
+    Tela= models.ForeignKey(Tela, models.PROTECT)
+    Camisa = models.OneToOneField(Camisa, models.PROTECT)
     
     def __str__ (self): 
         return self.Nombre
