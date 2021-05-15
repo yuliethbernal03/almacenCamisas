@@ -25,7 +25,7 @@ SECRET_KEY = 'n3vnp_(wi&*7+#gqnu#*!8l6nl=e!(bvzhws(hm$ukoq6_(^$z'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-#ALLOWED_HOSTS = ['*']
+# ALLOWED_HOSTS = ['*']
 ALLOWED_HOSTS = ['almacen-camisas.herokuapp.com']
 
 
@@ -139,8 +139,8 @@ USE_TZ = True
 STATIC_URL = '/static/'
 # STATICFILES_DIRS = [
 #     BASE_DIR / "static",
-# ]#para trabajar localhost
-STATIC_ROOT = 'static' #static para trabajar heroku
+# ]     #para trabajar localhost
+STATIC_ROOT = "static" #static para trabajar heroku
 
 #servidor de medios
 MEDIA_URL = '/media/'
